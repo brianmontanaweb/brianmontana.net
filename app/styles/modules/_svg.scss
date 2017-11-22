@@ -1,0 +1,54 @@
+// ==========================================================================
+// SVG
+// ==========================================================================
+
+
+.svg__wrapper {
+  font-size: 1vmin;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform-origin: center;
+  transform: rotateX(-30deg) rotateY(-30deg);
+  margin: 0 auto;
+}
+
+.svg__container {
+  position: absolute;
+  width: 50em;
+  height: 50em;
+  margin-top: -25em;
+  margin-left: -25em;
+}
+
+.computer-top {
+  transform: rotateX(90deg) rotateY(0deg) rotateZ(0) translateX(3.6em) translateY(-7.4em) translateZ(4.2em);
+}
+
+.computer-side1 {
+  transform: rotateX(0deg) rotateY(90deg) rotateZ(0) translateX(-2.6em) translateY(2.4em) translateZ(16.5em);
+}
+
+.computer-side2 {
+  transform: rotateX(0deg) rotateY(90deg) rotateZ(0) translateX(-2.6em) translateY(2.2em) translateZ(-14.5em);
+}
+
+.computer-front1 {
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0) translateX(-2em) translateY(6.9em) translateZ(-4.7em);
+}
+
+.computer-front2 {
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0) translateX(8.5em) translateY(2.6em) translateZ(15em);
+}
+
+.computer-keyboard {
+  transform: rotateX(90deg) rotateY(0deg) rotateZ(0) translateX(7.6em) translateY(-7.7em) translateZ(-10.4em);
+}
+
+.computer__headline {
+  width: 70vmin;
+  transform: translateX(0em) translateY(0em) translateZ(-22em);
+  top: 0;
+  margin-left: -35em;
+}
