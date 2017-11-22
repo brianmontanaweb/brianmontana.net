@@ -2,12 +2,11 @@
 // SVG
 // ==========================================================================
 
-
 .svg__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 1vmin;
-  position: absolute;
-  top: 50%;
-  left: 50%;
   transform-style: preserve-3d;
   transform-origin: center;
   transform: rotateX(-30deg) rotateY(-30deg);
@@ -18,8 +17,6 @@
   position: absolute;
   width: 50em;
   height: 50em;
-  margin-top: -25em;
-  margin-left: -25em;
 }
 
 .computer-top {
@@ -49,6 +46,4 @@
 .computer__headline {
   width: 70vmin;
   transform: translateX(0em) translateY(0em) translateZ(-22em);
-  top: 0;
-  margin-left: -35em;
 }

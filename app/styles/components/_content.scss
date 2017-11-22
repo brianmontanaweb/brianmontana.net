@@ -2,10 +2,25 @@
 // Hero
 // ==========================================================================
 
+.headline__primary,
+.headline__secondary {
+  margin: 0.5rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+.headline__primary {
+  font-size: 6vmin;
+}
+
+.headline__secondary {
+  font-size: 5vmin;
+}
+
 .content__copy {
   font-size: 1.35rem;
   min-width: 40vw;
-  margin: 1rem 2rem;
+  margin: 2rem;
   padding: 1rem 2rem;
   text-shadow: 0.025rem 0.025rem 0 var(--color-secondary);
   background-color: var(--color-primary);

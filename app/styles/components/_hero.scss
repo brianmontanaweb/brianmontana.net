@@ -3,7 +3,9 @@
 // ==========================================================================
 
 .hero__wrapper {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100vmin;
   min-width: 50vw;
   height: 75vmin;
