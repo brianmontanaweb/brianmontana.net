@@ -58,9 +58,9 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       {
-        from: 'app/**/*',
-        to: '../dist',
-        ignore: ['*.sass', '*.scss', '*.js', '*.css', '*.svg', '*.gif', '*.png', '*.eot', '*.woff', '*.ttf']
+        from: './app/**/*',
+        to: './[name].[ext]',
+        ignore: ['*.sass', '*.scss', '*.js', '*.css', '*.svg', '*.gif', '*.png', '*.eot', '*.woff', '*.ttf', '*.html']
       }
     ])
   ],
