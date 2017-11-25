@@ -2,7 +2,7 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -56,16 +56,16 @@ module.exports = {
       filename: 'styles/styles.css',
       allChunks: true,
     }),
-    new OptimizeCssAssetsPlugin({
-      cssProcessorOptions: {
-        discardComments: {
-          removeAll: true
-        }
+    new CopyWebpackPlugin([
+      {
+        from: 'app/**/*',
+        to: '../dist',
+        ignore: ['*.sass', '*.scss', '*.js', '*.css', '*.svg', '*.gif', '*.png', '*.eot', '*.woff', '*.ttf']
       }
-    })
+    ])
   ],
   output: {
-    filename: '[name].bundle.js',
+    filename: 'js/[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   }
 };

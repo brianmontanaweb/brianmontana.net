@@ -10,6 +10,7 @@
     "browser-sync": "^2.18.13",
     "bs-fullscreen-message": "^1.1.0",
     "clean-webpack-plugin": "^0.1.17",
+    "copy-webpack-plugin": "^4.2.3",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^2.30.1",
