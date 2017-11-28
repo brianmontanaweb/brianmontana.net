@@ -6,8 +6,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './app/app.js'
+    app: './app.js'
   },
+  context: path.join(__dirname, 'app'),
   module: {
     rules: [
       {
@@ -46,7 +47,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      template: 'app/index.html',
+      template: 'index.html',
       minify: {
         removeComments: true,
         collapseWhitespace: true
@@ -58,9 +59,10 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       {
-        from: './app/**/*',
-        to: './[name].[ext]',
-        ignore: ['*.sass', '*.scss', '*.js', '*.css', '*.svg', '*.gif', '*.png', '*.eot', '*.woff', '*.ttf', '*.html']
+        debug: 'info',
+        from: '**/*',
+        to: '[path][name].[ext]',
+        ignore: ['*.sass', '*.scss', '*.js', '*.css', '*.eot', '*.woff', '*.ttf', '*.html']
       }
     ])
   ],
