@@ -28,3 +28,18 @@
   box-shadow: 0.5rem 0.5rem 0 0.5rem var(--color-secondary),
   -0.5rem -0.5rem 0 0.5rem var(--color-secondary);
 }
+
+.headline__primary,
+.headline__secondary {
+  margin: 0.5rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+.headline__primary {
+  font-size: 6vmin;
+}
+
+.headline__secondary {
+  font-size: 5vmin;
+}

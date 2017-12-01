@@ -3,12 +3,12 @@
 
 # TEAM
 
-  <name> -- <role> -- <twitter>
+  Brian Montana -- Developer -- @brianmontanaweb
 
 # THANKS
 
-  <name>
+  Mom, Abby <3, Brittany, family and friends
 
 # TECHNOLOGY COLOPHON
 
-  HTML5, CSS3
+  HTML, CSS, JS
