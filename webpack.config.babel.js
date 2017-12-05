@@ -1,5 +1,7 @@
 const {resolve} = require('path');
 const {getIfUtils} = require('webpack-config-utils');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = env => {
   const {ifProd, ifNotProd} = getIfUtils(env);
@@ -8,8 +10,8 @@ module.exports = env => {
     entry: './app.js',
     output: {
       path: resolve('dist'),
-      filename: './js/[name].min.js',
-      publicPath: '/dist/',
+      filename: 'js/[name].min.js',
+      publicPath: '/',
       pathinfo: ifNotProd(),
     },
     devtool: ifProd('source-map', 'eval'),
@@ -23,21 +25,24 @@ module.exports = env => {
           exclude: /node_modules/
         },
         {
-          test: /\.(scss|sass)$/,
-          loaders: [
-            'style-loader',
-            'css-loader',
-            'sass-loader'
-          ]
-        },
-        {
           test: /\.(svg|gif|png|eot|woff|ttf)$/,
           loaders: [
             'url-loader'
           ]
         },
-      ]
-    }
+        {
+          test: /\.(scss|sass)$/,
+          loader: ExtractTextWebpackPlugin.extract({
+            fallback: 'style-loader',
+            use: ['css-loader', 'sass-loader']
+          })
+        }
+      ],
+    },
+    plugins: [
+      new CleanWebpackPlugin('./dist'),
+      new ExtractTextWebpackPlugin('styles/styles.css')
+    ]
   };
   if (env.debug) {
     console.log(config);

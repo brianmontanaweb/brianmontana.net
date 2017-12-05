@@ -1,7 +1,8 @@
 {
   "scripts": {
-    "dev": "webpack-dev-server --env.dev",
-    "build:dev": "webpack --config webpack.dev.babel.js --env.dev"
+    "dev": "webpack-dev-server --env.dev --content-base app/",
+    "build:dev": "webpack --config webpack.dev.babel.js --env.dev",
+    "build:prod": "webpack --config webpack.prod.babel.js --env.prod"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

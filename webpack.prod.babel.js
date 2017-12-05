@@ -2,11 +2,12 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const config = require('./webpack.config.babel');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const config = require('./webpack.dev.babel');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 
 module.exports = env => {
-  merge(config, {
+  return merge(config(env), {
     plugins: [
       new UglifyJSPlugin(),
       new webpack.DefinePlugin({
@@ -19,11 +20,13 @@ module.exports = env => {
           }
         }
       }),
-      new ImageminPlugin({
-        test: 'images/**/*',
-        jpegtran: {
-          progressive: true
+      new CopyWebpackPlugin([
+        {
+          from: 'images/**/*'
         }
+      ]),
+      new ImageminWebpackPlugin({
+        test: /\.(jpe?g|png|gif|svg)$/i
       })
     ]
   });
